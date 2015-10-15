@@ -1,0 +1,26 @@
+{
+  "name": "afanasy.com",
+  "version": "1.0.0",
+  "description": "afanasy.com",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raabbajam/afanasy.com.git"
+  },
+  "author": "Raabb Ajam <raabbajam@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raabbajam/afanasy.com/issues"
+  },
+  "homepage": "https://github.com/raabbajam/afanasy.com#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "supertest": "^1.1.0"
+  }
+}
