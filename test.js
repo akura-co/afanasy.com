@@ -16,9 +16,6 @@ describe('test mount', function () {
   it('mounted from other express app', function (done) {
     request(server).
       get('/afanasy.com/').
-      expect(function (res) {
-        console.log(res.text);
-      }).
       expect(200, done)
   })
 })
