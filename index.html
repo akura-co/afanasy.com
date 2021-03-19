@@ -20,7 +20,7 @@
         margin-top: -100px;
       }
       .photo {
-        background-image: url(http://www.gravatar.com/avatar/85a00a53390554b935b8921fcc8aa234?s=200);
+        background-image: url(//www.gravatar.com/avatar/85a00a53390554b935b8921fcc8aa234?s=200);
         width: 200px;
         height: 200px;
         border-radius: 100px;
@@ -81,7 +81,6 @@
       }
     </style>
     <script src="jquery.js"></script>
-    <script src="jquery.transit.min.js"></script>
     <script>
       $(function () {
         var period = [
@@ -95,14 +94,13 @@
           164.8,
           247.7
         ]
-        var run = function (d, duration) {
-          d.transition({rotate: '+=36000deg'}, duration, 'linear', function () {run(d, duration)})
-        }
-        $('.photo').click(function () {location = 'http://' + document.domain.split('.')[0].split('').reverse().join('') + '.com/'})
-        $('.orbit').click(function () {location = $('a', this).attr('href')})
+        $('.photo').click(function () {
+          location = 'http://' + document.domain.split('.')[0].split('').reverse().join('') + '.com/'
+          return false
+        })
         var radius = 300
         $('.orbit').each(function (i) {
-          $(this).css({
+          var box = $(this).css({
             width: radius,
             height: radius,
             marginLeft: -radius/2,
@@ -110,8 +108,15 @@
             borderRadius: radius/2,
             zIndex: -radius
           })
+          /*
+          setTimeout(function () {
+            box.css({
+              transition: 'transform ' + period[i] * 2000 + 's linear',
+              transform: 'rotate(36000deg)'
+            })
+          })
+          */
           radius += 100
-          run($(this), period[i] * 2000000)
         })
       })
     </script>
@@ -121,7 +126,7 @@
       <div class="photo"></div>
     </div>
     <div class="orbit akura">
-      <a class="fa-stack fa-lg" href="http://akura.co">
+      <a class="fa-stack fa-lg" href="https://akura.co">
         <i class="fa fa-circle fa-stack-1x core fa-inverse icon"></i>
         <i class="fa fa-circle-o fa-stack-1x innerLayer fa-inverse icon"></i>
         <i class="fa fa-circle-o fa-stack-1x outerLayer fa-inverse icon"></i>
@@ -129,19 +134,19 @@
       </a>
     </div>
     <div class="orbit fanafan">
-      <a class="fa-stack fa-lg" href="http://fanafan.us">
+      <a class="fa-stack fa-lg" href="https://fanafan.us">
         <i class="fa fa-circle fa-stack-2x"></i>
         <i class="fa fa-heart fa-stack-1x fa-inverse icon"></i>
       </a>
     </div>
     <div class="orbit facebook">
-      <a class="fa-stack fa-lg" href="http://facebook.com/afanasy">
+      <a class="fa-stack fa-lg" href="https://facebook.com/afanasy">
         <i class="fa fa-circle fa-stack-2x"></i>
         <i class="fa fa-facebook fa-stack-1x fa-inverse icon"></i>
       </a>
     </div>
     <div class="orbit vk">
-      <a class="fa-stack fa-lg" href="http://vk.com/ysanafa">
+      <a class="fa-stack fa-lg" href="https://vk.com/ysanafa">
         <i class="fa fa-circle fa-stack-2x"></i>
         <i class="fa fa-vk fa-stack-1x fa-inverse icon"></i>
       </a>
@@ -159,13 +164,13 @@
       </a>
     </div>
     <div class="orbit instagram">
-      <a class="fa-stack fa-lg" href="http://instagram.com/ysanafa">
+      <a class="fa-stack fa-lg" href="https://instagram.com/ysanafa">
         <i class="fa fa-circle fa-stack-2x"></i>
         <i class="fa fa-instagram fa-stack-1x fa-inverse icon"></i>
       </a>
     </div>
     <div class="orbit soundcloud">
-      <a class="fa-stack fa-lg" href="http://soundcloud.com/afanasy">
+      <a class="fa-stack fa-lg" href="https://soundcloud.com/afanasy">
         <i class="fa fa-circle fa-stack-2x"></i>
         <i class="fa fa-soundcloud fa-stack-1x fa-inverse icon"></i>
       </a>
